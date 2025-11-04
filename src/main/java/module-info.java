@@ -1,9 +1,11 @@
-module com.andresherreraoett.simuladorcontrolvelocidad {
+module com.ITCelaya.simuladorcontrolvelocidad {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.kordamp.ikonli.javafx;
-
-    opens com.andresherreraoett.simuladorcontrolvelocidad to javafx.fxml;
-    exports com.andresherreraoett.simuladorcontrolvelocidad;
+    requires org.kordamp.ikonli.fontawesome6;
+    opens com.ITCelaya.simuladorcontrolvelocidad to javafx.fxml;
+    exports com.ITCelaya.simuladorcontrolvelocidad;
+    exports com.ITCelaya.simuladorcontrolvelocidad.controllers;
+    opens com.ITCelaya.simuladorcontrolvelocidad.controllers to javafx.fxml;
 }

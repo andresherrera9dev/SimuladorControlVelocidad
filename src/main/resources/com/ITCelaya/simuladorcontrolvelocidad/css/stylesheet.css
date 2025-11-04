@@ -1,0 +1,21 @@
+.startBtn{
+ -fx-background-color: #63bd6a;
+}
+
+.startBtn:hover{
+ -fx-background-color: #72e179;
+}
+
+.showBtn{
+ -fx-background-color: #63adbd;
+}
+.showBtn:hover{
+ -fx-background-color: #72d0e1;
+}
+
+.exitBtn{
+ -fx-background-color: #bd6363;
+}
+.exitBtn:hover{
+ -fx-background-color: #e17272;
+}
