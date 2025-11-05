@@ -25,7 +25,7 @@ public class SceneManager {
             Scene scene = new Scene(root);
             scene.setFill(Color.TRANSPARENT);
             popupStage = new Stage();
-            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.initStyle(StageStyle.TRANSPARENT);
             popupStage.setScene(scene);
             popupStage.show();
         } catch (IOException e) {

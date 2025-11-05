@@ -78,6 +78,16 @@
  -fx-border-radius: 8;
 }
 
+.rootContainer{
+ -fx-background-color: #e9e9e9;
+ -fx-border-color: #878787;
+ -fx-border-width: 2;
+ -fx-border-radius: 4;
+ -fx-background-radius: 4;
+ -fx-background-insets: 1;
+ -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0.5, -2, -2);
+}
+
 .exitContainer{
  -fx-background-color: #ffffff;
  -fx-border-color: #ffffff;
@@ -89,6 +99,6 @@
 }
 
 .transparentContainer{
- -fx-background-color: rgba(255, 255, 255, 0);
+ -fx-background-color: transparent;
 }
 
