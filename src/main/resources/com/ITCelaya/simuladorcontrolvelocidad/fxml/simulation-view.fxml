@@ -5,36 +5,66 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.shape.Circle?>
 
-<VBox fx:id="windowContainer" alignment="CENTER" maxWidth="600.0" prefHeight="575.0" prefWidth="650.0" spacing="8.0" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ITCelaya.simuladorcontrolvelocidad.controllers.simulationController">
+
+<VBox maxWidth="600.0" prefHeight="575.0" prefWidth="650.0" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ITCelaya.simuladorcontrolvelocidad.controllers.simulationController">
     <children>
-        <HBox alignment="CENTER" maxHeight="275.0" maxWidth="565.0" styleClass="itemContainer">
-            <children>
-                <ImageView fitHeight="270.0" fitWidth="560.0" pickOnBounds="true">
-                    <image>
-                        <Image url="@../images/backgroundSpeedLimit.png" />
-                    </image>
-                    <HBox.margin>
-                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                    </HBox.margin>
-                </ImageView>
-            </children>
-        </HBox>
-        <VBox spacing="4.0">
-            <children>
-                <Label styleClass="h1" text="SIMULATION" textAlignment="JUSTIFY" wrapText="true" />
-                <Label layoutX="10.0" layoutY="10.0" styleClass="h2" text="Este simulador permite visualizar las recompensas y multas generadas por una cámara de control de velocidad." textAlignment="JUSTIFY" wrapText="true" />
-                <Label layoutX="10.0" layoutY="104.0" styleClass="h3" text="Seleccione una acción para continuar." textAlignment="JUSTIFY" wrapText="true">
-                    <graphic>
-                        <FontIcon iconLiteral="far-arrow-alt-circle-left" />
-                    </graphic>
-                </Label>
-            </children>
-        </VBox>
+      <HBox>
+         <children>
+            <StackPane>
+               <children>
+                  <Circle fill="#ff1f1f" radius="90.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="WHITE" layoutX="278.0" layoutY="110.0" radius="80.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label styleClass="h1" text="60 Km/h" />
+               </children>
+            </StackPane>
+            <VBox alignment="TOP_RIGHT" spacing="16.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="TOP_RIGHT" spacing="16.0" styleClass="h2">
+                     <children>
+                            <Label styleClass="data" text="Placa:" textAlignment="JUSTIFY" wrapText="true" />
+                        <StackPane alignment="TOP_LEFT">
+                           <children>
+                              <Label styleClass="data" text="                " textAlignment="JUSTIFY" underline="true" wrapText="true" />
+                              <Label fx:id="plateLbl" layoutX="10.0" layoutY="10.0" styleClass="data" text="1234534" textAlignment="JUSTIFY" textFill="#6aa34a" wrapText="true" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" spacing="16.0">
+                     <children>
+                        <Label styleClass="data" text="Velocidad:" textAlignment="JUSTIFY" wrapText="true" />
+                        <StackPane alignment="TOP_LEFT">
+                           <children>
+                              <Label styleClass="data" text="                " textAlignment="JUSTIFY" underline="true" wrapText="true" />
+                              <Label fx:id="velocityLbl" layoutX="10.0" layoutY="10.0" styleClass="data" text="44 Km/h" textAlignment="JUSTIFY" textFill="#6aa34a" wrapText="true" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="pointsLbl" styleClass="points" text="+100" textAlignment="JUSTIFY" wrapText="true" />
+            <HBox alignment="BOTTOM_RIGHT" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="carImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/car.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
     </children>
-    <padding>
-        <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
-    </padding>
+   <padding>
+      <Insets bottom="64.0" left="32.0" right="32.0" top="64.0" />
+   </padding>
 </VBox>

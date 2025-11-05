@@ -12,8 +12,20 @@
  -fx-font-size: 16pt;
 }
 
-.h2{
- -fx-font-size: 12pt;
+.h3{
+ -fx-font-size: 14pt;
+}
+
+.data{
+ -fx-font-size: 15pt;
+ -fx-font-weight: bold;
+}
+
+
+.points{
+ -fx-font-weight: bold;
+ -fx-font-size: 64pt;
+ -fx-effect: dropshadow(gaussian, rgb(168, 168, 168), 2, 0, 1, 1);
 }
 
 .button {
@@ -102,3 +114,49 @@
  -fx-background-color: transparent;
 }
 
+.table-view {
+ -fx-background-color: white;
+ -fx-border-color: black;
+ -fx-border-width: 2;
+ -fx-table-cell-border-color: black;
+ -fx-padding: 0;
+}
+
+.table-view .column-header-background {
+ -fx-background-color: white;
+ -fx-border-color: black;
+ -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+ -fx-font-size: 24pt;
+
+ -fx-border-color: black;
+ -fx-border-width: 0 1 1 0;
+ -fx-background-color: white;
+}
+
+.table-row-cell {
+ -fx-border-color: black;
+ -fx-border-width: 0 0 1 0;
+ -fx-background-color: white;
+}
+
+.table-cell {
+ -fx-border-color: black;
+ -fx-border-width: 0 1 0 0;
+ -fx-alignment: CENTER_LEFT;
+ -fx-padding: 5;
+ -fx-background-color: white;
+ -fx-text-fill: black;
+}
+
+.table-row-cell:selected {
+ -fx-background-color: #e0e0e0;
+}
+
+.table-cell:selected {
+ -fx-background-color: #e0e0e0;
+ -fx-text-fill: black;
+}
