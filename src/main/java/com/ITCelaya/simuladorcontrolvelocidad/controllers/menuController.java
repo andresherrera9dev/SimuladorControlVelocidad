@@ -3,7 +3,7 @@ package com.ITCelaya.simuladorcontrolvelocidad.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
-public class HelloController {
+public class menuController {
     @FXML
     private VBox mainContainer;
 

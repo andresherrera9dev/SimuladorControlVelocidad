@@ -1,16 +1,59 @@
+.root{
+ /*-fx-font: "Consolas";*/
+ -fx-font: "Segoe UI";
+}
+
+.btnContainer{
+ -fx-background-color: #ffffff;
+}
+
+.label{
+ -fx-font: "Segoe UI";
+}
+
+.h1{
+ -fx-font-weight: bold;
+ -fx-font-size: 24pt;
+ -fx-effect: dropshadow(gaussian, rgb(168, 168, 168), 2, 0, 1, 1);
+}
+
+.button {
+ -fx-text-fill: #333;
+ -fx-font-size: 14;
+ -fx-font-weight: bold;
+ -fx-border-color: #ffffff;
+ -fx-border-width: 2;
+ -fx-border-radius: 4;
+ -fx-background-radius: 4;
+ -fx-background-insets: 1;
+ -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 2, 2);
+ -fx-cursor: hand;
+}
+
+.button:hover{
+ -fx-font-size: 14;
+}
+
+.button:pressed {
+ -fx-border-color: #ffffff;
+ -fx-translate-y: 4;
+ -fx-translate-x: 2;
+ -fx-transition: all 0.2s ease-in-out;
+}
+
 .startBtn{
  -fx-background-color: #63bd6a;
 }
 
 .startBtn:hover{
- -fx-background-color: #72e179;
+ -fx-background-color: #67c86d;
 }
 
 .showBtn{
- -fx-background-color: #63adbd;
+ -fx-background-color: #b6b7b8;
 }
 .showBtn:hover{
- -fx-background-color: #72d0e1;
+ -fx-background-color: #cdcdcd;
 }
 
 .exitBtn{
@@ -19,3 +62,19 @@
 .exitBtn:hover{
  -fx-background-color: #e17272;
 }
+
+.itemContainer{
+ -fx-background-color: #ffffff;
+ -fx-border-color: #ffffff;
+ -fx-border-width: 1;
+ -fx-border-radius: 8;
+ -fx-background-radius: 8;
+ -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 2, 2);
+ -fx-cursor: hand;
+}
+
+.whiteBorderContainer{
+ -fx-background-color: rgba(205, 205, 205, 0.86);
+ -fx-border-width: 4px;
+}
+

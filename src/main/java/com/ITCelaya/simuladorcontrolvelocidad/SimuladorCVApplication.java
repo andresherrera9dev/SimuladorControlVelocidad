@@ -13,14 +13,13 @@ import java.io.IOException;
 public class SimuladorCVApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(SimuladorCVApplication.class.getResource("fxml/simulator-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SimuladorCVApplication.class.getResource("fxml/menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Simulador Control De Velocidad");
+        stage.setTitle("Simulador control de velocidad");
         stage.setScene(scene);
         stage.show();
-        scene.getStylesheets().add(SimuladorCVApplication.class.getResource("css/stylesheet.css").toString());
+//        scene.getStylesheets().add(SimuladorCVApplication.class.getResource("css/stylesheet.css").toString());
     }
-
     public static void main(String[] args) {
         launch();
     }
