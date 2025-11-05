@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<HBox stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ITCelaya.simuladorcontrolvelocidad.controllers.menuController">
+<HBox prefHeight="541.0" prefWidth="850.0" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ITCelaya.simuladorcontrolvelocidad.controllers.menuController">
    <children>
       <VBox alignment="CENTER" prefHeight="461.0" prefWidth="226.0" spacing="16.0" styleClass="btnContainer">
          <children>
@@ -47,11 +47,11 @@
          </padding>
       </VBox>
       <Separator orientation="VERTICAL" prefHeight="200.0" />
-      <VBox alignment="TOP_CENTER" maxWidth="600.0" spacing="8.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" maxWidth="600.0" prefHeight="575.0" prefWidth="650.0" spacing="8.0" HBox.hgrow="ALWAYS">
          <children>
-            <HBox alignment="CENTER" styleClass="itemContainer">
+            <HBox alignment="CENTER" maxHeight="275.0" maxWidth="565.0" styleClass="itemContainer">
                <children>
-                  <ImageView fitHeight="277.0" fitWidth="568.0" pickOnBounds="true">
+                  <ImageView fitHeight="270.0" fitWidth="560.0" pickOnBounds="true">
                      <image>
                         <Image url="@../images/backgroundSpeedLimit.png" />
                      </image>
@@ -61,15 +61,20 @@
                   </ImageView>
                </children>
             </HBox>
-            <VBox>
+            <VBox spacing="4.0">
                <children>
                   <Label styleClass="h1" text="Bienvenido al sistema de control de velocidad" textAlignment="JUSTIFY" wrapText="true" />
-                  <Label layoutX="10.0" layoutY="10.0" styleClass="h2" text="Porfavor seleccione que accion desea realizar." textAlignment="CENTER" wrapText="true" />
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="h2" text="Este simulador permite visualizar las recompensas y multas generadas por una cámara de control de velocidad." textAlignment="JUSTIFY" wrapText="true" />
+                  <Label layoutX="10.0" layoutY="104.0" styleClass="h3" text="Seleccione una acción para continuar." textAlignment="JUSTIFY" wrapText="true">
+                     <graphic>
+                        <FontIcon iconLiteral="far-arrow-alt-circle-left" />
+                     </graphic>
+                  </Label>
                </children>
             </VBox>
          </children>
          <padding>
-            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+            <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
          </padding>
       </VBox>
    </children>

@@ -1,5 +1,6 @@
 package com.ITCelaya.simuladorcontrolvelocidad.controllers;
 
+import com.ITCelaya.simuladorcontrolvelocidad.util.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
@@ -8,17 +9,15 @@ public class menuController {
     private VBox mainContainer;
 
     @FXML
-    void exitProgram() {
+    void loadSimulation() {
 
     }
-
     @FXML
     void loadRegistry() {
 
     }
-
     @FXML
-    void loadSimulation() {
-
+    void exitProgram() {
+        SceneManager.launchNewWindow("fxml/exit-view.fxml");
     }
 }
