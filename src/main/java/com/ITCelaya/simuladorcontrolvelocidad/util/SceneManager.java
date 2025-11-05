@@ -4,6 +4,7 @@ import com.ITCelaya.simuladorcontrolvelocidad.SimuladorCVApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -28,6 +29,16 @@ public class SceneManager {
             popupStage.initStyle(StageStyle.TRANSPARENT);
             popupStage.setScene(scene);
             popupStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void loadVbox(VBox windowContainer, String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(SimuladorCVApplication.class.getResource(fxmlFile));
+            Pane root = loader.load();
+            windowContainer.getChildren().clear();
+            windowContainer.getChildren().add(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
