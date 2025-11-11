@@ -19,7 +19,7 @@ public class menuController implements Initializable {
     }
     @FXML
     void loadRegistry() {
-        SceneManager.loadVbox(windowContainer, "fxml/registry-view.fxml");
+        //SceneManager.loadVbox(windowContainer, "fxml/registry-view.fxml");
 
     }
     @FXML

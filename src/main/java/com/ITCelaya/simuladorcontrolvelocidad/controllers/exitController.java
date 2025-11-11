@@ -6,8 +6,9 @@ import javafx.fxml.FXML;
 public class exitController {
     @FXML
     void closePrimaryStage() {
-        SceneManager.closeProgram();
-        SceneManager.closePopup();
+        System.exit(0);
+        //SceneManager.closeProgram();
+        //SceneManager.closePopup();
     }
 
     @FXML
