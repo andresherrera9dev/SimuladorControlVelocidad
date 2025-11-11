@@ -25,7 +25,4 @@ public class SimuladorCVApplication extends Application {
         stage.show();
 //        scene.getStylesheets().add(SimuladorCVApplication.class.getResource("css/stylesheet.css").toString());
     }
-    public static void main(String[] args) {
-        launch();
-    }
 }
