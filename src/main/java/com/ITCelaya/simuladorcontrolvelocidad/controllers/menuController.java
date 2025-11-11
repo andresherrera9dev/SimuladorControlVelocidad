@@ -29,6 +29,6 @@ public class menuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        SceneManager.loadVbox(windowContainer, "fxml/welcome-view.fxml");
+        SceneManager.loadVbox(windowContainer, "fxml/simulation-view.fxml");
     }
 }

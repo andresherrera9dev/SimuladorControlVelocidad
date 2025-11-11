@@ -24,7 +24,7 @@
         </HBox>
         <VBox spacing="4.0" VBox.vgrow="ALWAYS">
             <children>
-                <Label styleClass="h1" text="Bienvenido al sistema de simulacion" textAlignment="JUSTIFY" wrapText="true" />
+                <Label styleClass="h1" text="Bienvenido al sistema de simulación" textAlignment="JUSTIFY" wrapText="true" />
                 <Label layoutX="10.0" layoutY="10.0" styleClass="h2" text="Este simulador permite visualizar las recompensas y multas generadas por una cámara de control de velocidad." textAlignment="JUSTIFY" wrapText="true" />
                 <Label layoutX="10.0" layoutY="104.0" styleClass="h3" text="Seleccione una acción para continuar." textAlignment="JUSTIFY" wrapText="true">
                     <graphic>
