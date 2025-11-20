@@ -27,7 +27,7 @@
                         <Label styleClass="data" text="Placa:" textAlignment="JUSTIFY" wrapText="true" />
                         <StackPane alignment="TOP_LEFT">
                            <children>
-                              <Label styleClass="data" text="                   " textAlignment="JUSTIFY" underline="true" wrapText="true" />
+                              <Label styleClass="data" text="                     " textAlignment="JUSTIFY" underline="true" wrapText="true" />
                               <Label fx:id="plateLbl" layoutX="10.0" layoutY="10.0" styleClass="data" textAlignment="JUSTIFY" textFill="#6aa34a" wrapText="true" />
                            </children>
                         </StackPane>
@@ -38,7 +38,7 @@
                         <Label styleClass="data" text="Velocidad:" textAlignment="JUSTIFY" wrapText="true" />
                         <StackPane alignment="TOP_LEFT">
                            <children>
-                              <Label styleClass="data" text="                   " textAlignment="JUSTIFY" underline="true" wrapText="true" />
+                              <Label styleClass="data" text="                     " textAlignment="JUSTIFY" underline="true" wrapText="true" />
                               <Label fx:id="velocityLbl" layoutX="10.0" layoutY="10.0" styleClass="data" textAlignment="JUSTIFY" textFill="#6aa34a" wrapText="true" />
                            </children>
                         </StackPane>

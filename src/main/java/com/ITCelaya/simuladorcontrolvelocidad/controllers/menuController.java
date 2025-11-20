@@ -1,9 +1,6 @@
 package com.ITCelaya.simuladorcontrolvelocidad.controllers;
 
-import com.ITCelaya.simuladorcontrolvelocidad.util.CarMovement;
-import com.ITCelaya.simuladorcontrolvelocidad.util.RandomPlate;
-import com.ITCelaya.simuladorcontrolvelocidad.util.RandomSpeed;
-import com.ITCelaya.simuladorcontrolvelocidad.util.SceneManager;
+import com.ITCelaya.simuladorcontrolvelocidad.util.*;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -27,34 +24,28 @@ public class menuController {
     private Button simulationBtn;
 
     private Timeline simulationLoop;
-    private boolean simulationWindow = true;
+    private boolean simulationWindowCheck = true;
 
     @FXML
     void loadSimulation() {
-        if (stopSimulation()) ;
-        else if (simulationWindow) {
-            plateLbl.setText(RandomPlate.generatePlate());
-            int speed = RandomSpeed.getRandomSpeed();
-            if (speed <= 60)
-                pointsLbl.setText("+100");
-            else
-                pointsLbl.setText("0");
-            velocityLbl.setText(Integer.toString(speed));
-            simulateCarMovement(1, 1, imageCar);
+        if (simulationLoop != null) stopSimulation();
+        else if (simulationWindowCheck) {
+            generateValues();
             buttonStyle("Detener simulacion", "#bd6363");
             startSimulationLoop();
         } else {
             SceneManager.loadVbox(windowContainer, "fxml/simulation-view.fxml", this);
-            simulationWindow = true;
+            buttonStyle("Iniciar simulacion", "#63bd6a");
+            simulationWindowCheck = true;
         }
     }
 
     @FXML
     void loadRegistry() {
-        stopSimulation();
-        buttonStyle("Iniciar simulacion", "#63bd6a");
+        if (simulationLoop != null) stopSimulation();
+        buttonStyle("Mostrar simulador", "#63bd6a");
         SceneManager.loadVbox(windowContainer, "fxml/registry-view.fxml", null);
-        simulationWindow = false;
+        simulationWindowCheck = false;
     }
 
     @FXML
@@ -65,43 +56,41 @@ public class menuController {
     private void startSimulationLoop() {
         simulationLoop = new Timeline(
                 new KeyFrame(Duration.seconds(2), e -> {
-                    if (!simulationWindow) {
+                    if (!simulationWindowCheck) {
                         simulationLoop.stop();
                         return;
                     }
-                    String plate = RandomPlate.generatePlate();
-                    int speed = RandomSpeed.getRandomSpeed();
-                    labelsSetText(plate, speed);
-                    simulateCarMovement(1, 1, imageCar);
+                    generateValues();
                 })
         );
         simulationLoop.setCycleCount(Timeline.INDEFINITE);
         simulationLoop.play();
     }
 
-    boolean stopSimulation() {
-        if (simulationLoop != null) {
+
+    void stopSimulation() {
             simulationLoop.stop();
             CarMovement.initCarMovement(imageCar);
             simulationLoop = null;
-            labelsSetText();
-            return true;
-        }
-        else
-            return false;
+            labelsSetEmptyText();
     }
-    void labelsSetText(String plate, int speed) {
+    private static MiddleSquareGenerator generator = new MiddleSquareGenerator(8247);
+
+    void generateValues() {
+        int speed = RandomSpeed.getRandomSpeed();
+        String plate = RandomPlate.generatePlate(generator.nextInt(1000)<500);
         velocityLbl.setText(speed + " Km/h");
         plateLbl.setText(plate);
-        if (speed <= 60){
+        if (speed <= 60 && RandomPlate.isGuanajuatoPlate(plate)){
             pointsLbl.setText("+100");
         }
         else
         {
             pointsLbl.setText("0");
         }
+        simulateCarMovement(1, 1, imageCar);
     }
-    void labelsSetText() {
+    void labelsSetEmptyText() {
         simulationBtn.setStyle("-fx-background-color: #63bd6a");
         simulationBtn.setText("Iniciar simulacion");
         pointsLbl.setText("");
@@ -113,5 +102,4 @@ public class menuController {
         simulationBtn.setText(text);
         simulationBtn.setStyle("-fx-background-color: "+Style);
     }
-
 }

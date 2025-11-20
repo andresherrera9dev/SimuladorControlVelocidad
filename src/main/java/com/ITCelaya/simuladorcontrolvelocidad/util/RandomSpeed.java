@@ -3,9 +3,9 @@ package com.ITCelaya.simuladorcontrolvelocidad.util;
 import java.util.Random;
 
 public class RandomSpeed {
+    private static MiddleSquareGenerator generator = new MiddleSquareGenerator((int)(System.currentTimeMillis() % 9000) + 1000);
     public static int getRandomSpeed() {
-        Random random = new Random();
-        int speed = random.nextInt(250);   // 0–249
+        int speed = 20 + generator.nextInt(140);
         return speed;
     }
 }
