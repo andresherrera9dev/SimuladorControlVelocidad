@@ -23,6 +23,6 @@ public class SimuladorCVApplication extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
         stage.show();
-//        scene.getStylesheets().add(SimuladorCVApplication.class.getResource("css/stylesheet.css").toString());
+        scene.getStylesheets().add(SimuladorCVApplication.class.getResource("css/stylesheet.css").toString());
     }
 }

@@ -1,6 +1,7 @@
 package com.ITCelaya.simuladorcontrolvelocidad.util;
 
 import com.ITCelaya.simuladorcontrolvelocidad.SimuladorCVApplication;
+import com.ITCelaya.simuladorcontrolvelocidad.controllers.menuController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -33,9 +34,11 @@ public class SceneManager {
             e.printStackTrace();
         }
     }
-    public static void loadVbox(VBox windowContainer, String fxmlFile) {
+    public static void loadVbox(VBox windowContainer, String fxmlFile, menuController controller) {
         try {
             FXMLLoader loader = new FXMLLoader(SimuladorCVApplication.class.getResource(fxmlFile));
+            if(controller != null)
+                loader.setController(controller);
             Pane root = loader.load();
             windowContainer.getChildren().clear();
             windowContainer.getChildren().add(root);

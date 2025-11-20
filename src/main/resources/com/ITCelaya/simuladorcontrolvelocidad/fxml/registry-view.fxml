@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxWidth="600.0" prefHeight="575.0" prefWidth="650.0" spacing="8.0" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ITCelaya.simuladorcontrolvelocidad.controllers.registryController">
+<VBox alignment="CENTER" spacing="8.0" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ITCelaya.simuladorcontrolvelocidad.controllers.registryController">
     <padding>
         <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
     </padding>
