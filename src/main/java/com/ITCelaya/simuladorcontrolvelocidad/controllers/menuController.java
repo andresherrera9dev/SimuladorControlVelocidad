@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+import javafx.event.ActionEvent;
 
 import static com.ITCelaya.simuladorcontrolvelocidad.util.CarMovement.simulateCarMovement;
 
@@ -55,16 +56,18 @@ public class menuController {
 
     private void startSimulationLoop() {
         simulationLoop = new Timeline(
-                new KeyFrame(Duration.seconds(2), e -> {
-                    if (!simulationWindowCheck) {
-                        simulationLoop.stop();
-                        return;
-                    }
-                    generateValues();
-                })
+                new KeyFrame(Duration.seconds(10), this::handleSimulationTick)
         );
         simulationLoop.setCycleCount(Timeline.INDEFINITE);
         simulationLoop.play();
+    }
+
+    private void handleSimulationTick(ActionEvent e) {
+        if (!simulationWindowCheck) {
+            simulationLoop.stop();
+            return;
+        }
+        generateValues();
     }
 
 
@@ -74,7 +77,7 @@ public class menuController {
             simulationLoop = null;
             labelsSetEmptyText();
     }
-    private static MiddleSquareGenerator generator = new MiddleSquareGenerator(8247);
+    private static final MiddleSquareGenerator generator = new MiddleSquareGenerator(8247);
 
     void generateValues() {
         int speed = RandomSpeed.getRandomSpeed();
@@ -83,10 +86,12 @@ public class menuController {
         plateLbl.setText(plate);
         if (speed <= 60 && RandomPlate.isGuanajuatoPlate(plate)){
             pointsLbl.setText("+100");
+            pointsLbl.setStyle("-fx-text-fill: black");
         }
         else
         {
-            pointsLbl.setText("0");
+            pointsLbl.setText("No puntos");
+            pointsLbl.setStyle("-fx-text-fill: red");
         }
         simulateCarMovement(1, 1, imageCar);
     }
@@ -94,6 +99,7 @@ public class menuController {
         simulationBtn.setStyle("-fx-background-color: #63bd6a");
         simulationBtn.setText("Iniciar simulacion");
         pointsLbl.setText("");
+        pointsLbl.setStyle("");
         plateLbl.setText("");
         velocityLbl.setText("");
     }
